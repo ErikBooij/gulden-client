@@ -1,0 +1,29 @@
+{
+    "name": "erikbooij/gulden-client",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Erik Booij",
+            "email": "erik@booij.me"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "GuldenPHP\\": "./src",
+            "GuldenPHP\\Tests\\": "./tests"
+        }
+    },
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "6.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "fiunchinho/phpunit-randomizer": "^3.0"
+    },
+    "scripts": {
+        "test": "phpunit-randomizer --order rand",
+        "test-coverage": "phpunit-randomizer --order rand --coverage-html ./coverage"
+    }
+}
