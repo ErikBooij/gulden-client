@@ -83,6 +83,22 @@ class GuldenClientTest extends ClientTestHelper
         self::assertEquals($validity, $this->guldenClient->validateAddressFormat($address), $testCase);
     }
 
+    /**
+     * @param string $address
+     * @param bool   $validity
+     * @param string $testCase
+     *
+     * @testWith ["Ga1GEKzjGdXBs43R8JsWP7V8kQUR2nV1NH",  true,  "valid address"]
+     *           ["Ga1GEKzjGdXBs43R8JsWP7V8kQUR2nV1NI",  false, "last letter of address changed"]
+     */
+    public function testValidateAddressVerifiesAddressChecksum(
+        string $address,
+        bool $validity,
+        string $testCase
+    ) {
+        self::assertEquals($validity, $this->guldenClient->validateAddress($address), $testCase);
+    }
+
     public function testUnknownMethodsAreRoutedToTheServerEndpoint()
     {
         $randomMethodName = str_replace(range(0, 9), range('a', 'j'), bin2hex(random_bytes(8)));
