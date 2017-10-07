@@ -7,6 +7,7 @@ use GuldenPHP\Model\NodeResponse;
 use GuldenPHP\SubClient\AccountsSubClient;
 use GuldenPHP\SubClient\BlockChainSubClient;
 use GuldenPHP\SubClient\ControlSubClient;
+use GuldenPHP\SubClient\NetworkSubClient;
 use GuldenPHP\SubClient\WalletSubClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -124,6 +125,7 @@ class GuldenClientTest extends ClientTestHelper
         self::assertInstanceOf(AccountsSubClient::class, $this->guldenClient->accounts());
         self::assertInstanceOf(BlockChainSubClient::class, $this->guldenClient->blockChain());
         self::assertInstanceOf(ControlSubClient::class, $this->guldenClient->control());
+        self::assertInstanceOf(NetworkSubClient::class, $this->guldenClient->network());
         self::assertInstanceOf(WalletSubClient::class, $this->guldenClient->wallet());
     }
 

@@ -173,7 +173,6 @@ class BlockChainSubClient extends AbstractSubClient
      * @param GuldenClient $client
      *
      * @return BlockChainSubClient
-     * @throws NodeException
      */
     public static function fromClient(GuldenClient $client): self
     {

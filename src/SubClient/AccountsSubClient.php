@@ -169,7 +169,6 @@ class AccountsSubClient extends AbstractSubClient
      * @param GuldenClient $client
      *
      * @return AccountsSubClient
-     * @throws NodeException
      */
     public static function fromClient(GuldenClient $client): self
     {

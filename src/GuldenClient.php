@@ -8,6 +8,7 @@ use GuldenPHP\Model\NodeResponse;
 use GuldenPHP\SubClient\AccountsSubClient;
 use GuldenPHP\SubClient\BlockChainSubClient;
 use GuldenPHP\SubClient\ControlSubClient;
+use GuldenPHP\SubClient\NetworkSubClient;
 use GuldenPHP\SubClient\WalletSubClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -152,6 +153,11 @@ class GuldenClient
             ->throwIfUnsuccessful();
 
         return $response->getBody();
+    }
+
+    public function network(): NetworkSubClient
+    {
+        return $this->getSubClient(NetworkSubClient::class);
     }
 
     /**
